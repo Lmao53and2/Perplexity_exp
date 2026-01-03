@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramodus Decoupled</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <aside id="sidebar">
+            <h2>🔑 Config</h2>
+            <select id="provider-select">
+                <option value="OpenAI">OpenAI</option>
+                <option value="Groq">Groq</option>
+                <option value="Perplexity">Perplexity</option>
+            </select>
+            <input type="password" id="api-key-input" placeholder="API Key (optional if in .env)">
+            
+            <div id="task-manager">
+                <h2>📋 Tasks</h2>
+                <ul id="task-list"></ul>
+                <div class="input-group">
+                    <input type="text" id="manual-task" placeholder="New task...">
+                    <button id="add-task-btn">Add</button>
+                </div>
+            </div>
+            
+            <div id="pdf-section">
+                <h2>📄 Context</h2>
+                <input type="file" id="pdf-upload" accept="application/pdf">
+                <div id="pdf-status">No PDF loaded</div>
+            </div>
+        </aside>
+
+        <main id="chat-container">
+            <header>
+                <h1>🤖 Paramodus</h1>
+            </header>
+            <div id="chat-history"></div>
+            <div id="thinking" style="opacity: 0;">Thinking...</div>
+            <div id="input-area">
+                <textarea id="user-input" placeholder="What's on your mind?"></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
