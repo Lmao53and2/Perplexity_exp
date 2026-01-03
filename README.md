@@ -1,19 +1,27 @@
-# Paramodus Anime.js Version
+# Paramodus Anime.js Version (Executable Ready)
 
-A high-performance, multi-agent AI productivity assistant built with **Agno v2.0**, **FastAPI**, and **Anime.js**.
+A high-performance, multi-agent AI productivity assistant.
 
-## Refactored Architecture
+## How to Build the EXE
 
-The Streamlit frontend has been completely replaced with a custom web interface:
-- **Backend**: FastAPI (`api.py`) serves as the REST API and static file host.
-- **Frontend**: A custom HTML/JS interface located in `static/`.
-- **Animations**: `anime.js` handles smooth UI transitions and message entry effects.
-- **Core Logic**: Remains in the `backend/` package, fully decoupled from any specific UI framework.
+To package this app into a single standalone `.exe` for Windows:
 
-## Setup
+1. **Install Build Tools**:
+   ```bash
+   pip install pyinstaller
+   ```
 
-1. Clone the repository.
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Configure your API keys in a `.env` file.
-4. Start the server: `python api.py`.
-5. Open your browser at `http://localhost:8000`.
+2. **Run the Build Command**:
+   ```bash
+   pyinstaller --noconfirm --onefile --windowed --add-data "static;static" --name "Paramodus" launcher.py
+   ```
+   *Note: Use `:` instead of `;` on Linux/macOS (e.g., `--add-data "static:static"`).*
+
+3. **Find your Program**:
+   The standalone executable will be in the `dist/` folder.
+
+## Running in Dev Mode
+```bash
+python launcher.py
+```
+This will start the FastAPI server and automatically open the UI in your browser.

@@ -7,3 +7,4 @@ openai>=1.12.0
 groq>=0.4.2
 pypdf>=4.0.1
 sqlalchemy>=2.0.0
+pyinstaller>=6.3.0
